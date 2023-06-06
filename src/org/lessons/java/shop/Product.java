@@ -10,7 +10,7 @@ public class Product {
     private BigDecimal vat;
     private BigDecimal price;
 
-    // CONSTRUCTOR
+    // CONSTRUCTORS
     public Product(int numberCode, String name, String description, BigDecimal vat, BigDecimal price) {
         this.numberCode = numberCode;
         this.name = name;
@@ -46,12 +46,12 @@ public class Product {
     }
 
     // Getter for vat
-    public BigDecimal getvat() {
+    public BigDecimal getVat() {
         return vat;
     }
 
     // Setter for vat
-    public void setvat(BigDecimal vat) {
+    public void setVat(BigDecimal vat) {
         this.vat = vat;
     }
 
@@ -72,7 +72,7 @@ public class Product {
     }
 
     // Metodo per ottenere il nome esteso: codice + nome prodotto
-    public String getFullname() {
+    public String getFullName() {
         return numberCode + "-" + name;
     }
 }
