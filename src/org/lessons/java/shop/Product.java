@@ -75,4 +75,17 @@ public class Product {
     public String getFullName() {
         return numberCode + "-" + name;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Codice prodotto: ").append(getNumberCode()).append("\n");
+        sb.append("Nome: ").append(getName()).append("\n");
+        sb.append("Descrizione: ").append(getDescription()).append("\n");
+        sb.append("Prezzo (IVA esclusa): ").append(getPrice()).append("\n");
+        sb.append("IVA: ").append(getVat().multiply(new BigDecimal(100))).append("\n");
+        sb.append("Nome esteso (codice + nome prodotto): ").append(getFullName()).append("\n");
+        sb.append("Prezzo (IVA inclusa): ").append(getTotalPrice()).append("\n");
+        return sb.toString();
+    }
 }

@@ -11,4 +11,13 @@ public class Headphone extends Product {
         this.color = color;
         this.isWireless = isWireless;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("Colore cuffie: ").append(color).append("\n");
+        sb.append("Sono wireless? ").append(isWireless ? "Sì" : "No").append("\n");
+        return sb.toString();
+    }
 }

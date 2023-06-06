@@ -11,4 +11,13 @@ public class Television extends Product {
         this.sizes = sizes;
         this.isSmart = isSmart;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("Dimensioni Tv (in pollici): ").append(sizes).append("\n");
+        sb.append("È una smart TV? ").append(isSmart ? "Sì" : "No").append("\n");
+        return sb.toString();
+    }
 }

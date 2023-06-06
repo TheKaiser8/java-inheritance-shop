@@ -66,6 +66,7 @@ public class Cart {
                     int amountMemory = Integer.parseInt(scan.nextLine());
 
                     cart[i] = new Smartphone(numberCode, name, description, vatInput, priceInput, imei, amountMemory);
+                    System.out.println("Prezzo totale (IVA inclusa): " + cart[i].getTotalPrice());
                     break;
                 case 2:
                     System.out.println("Inserisci le informazioni della TV");
@@ -76,22 +77,31 @@ public class Cart {
                     boolean isSmart = scan.nextLine().equalsIgnoreCase("s");
 
                     cart[i] = new Television(numberCode, name, description, vatInput, priceInput, sizes, isSmart);
+                    System.out.println("Prezzo totale (IVA inclusa): " + cart[i].getTotalPrice());
                     break;
                 case 3:
                     System.out.println("Inserisci le informazioni delle cuffie");
                     System.out.print("Colore cuffie: ");
                     String color = scan.nextLine();
 
-                    System.out.print("È Wireless? (true/false): ");
+                    System.out.print("Sono wireless? (s/n): ");
                     boolean isWireless = scan.nextLine().equalsIgnoreCase("s");
 
                     cart[i] = new Headphone(numberCode, name, description, vatInput, priceInput, color, isWireless);
+                    System.out.println("Prezzo totale (IVA inclusa): " + cart[i].getTotalPrice());
                     break;
                 default:
                     System.out.println("Scelta non valida.");
                     break;
             }
         }
+
+        // stampo riepilogo del carrello
+        System.out.println("\n" + "Riepilogo del carrello:");
+        for (int i = 0; i < cart.length; i++) {
+            System.out.println(cart[i].toString());
+        }
+
         scan.close();
     }
 }

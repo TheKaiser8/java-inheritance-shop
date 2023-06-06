@@ -11,4 +11,13 @@ public class Smartphone extends Product {
         this.imei = imei;
         this.amountMemory = amountMemory;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("IMEI: ").append(imei).append("\n");
+        sb.append("Quantità di memoria: ").append(amountMemory).append("\n");
+        return sb.toString();
+    }
 }
